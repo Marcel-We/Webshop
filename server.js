@@ -1,15 +1,10 @@
 var express = require('express');
 var app = express();
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-var db = mongoose.connect('mongodb://localhost/fire-place-shop');
 
-//var Product = require('./model/product');
-//var WishList = require('./model/wishlist');
+app.get('/', function(request, response) {
+    response.send('Webshop-API');
+});
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
-
-app.listen(3000, function (){
-    console.log("Fire-Place Shop API running on port 3000...");
+app.listen(3000, function () {
+    console.log("Webshop API running on port 3000...");
 });
